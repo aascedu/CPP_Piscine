@@ -12,12 +12,17 @@ void	Contact::setFirstName(void)
 {
 	std::string	input;
 
-	input = "";
-		std::cout << "First Name : ";
-	while (input.length() == 0)
+	while (1)
 	{
+		if (std::cin.eof())
+			return;
+		std::cout << "First Name : ";
 		std::getline(std::cin, input);
-		firstName = input;
+		if (input.length() != 0)
+		{
+			firstName = input;
+			break;
+		}
 	}
 }
 
@@ -27,12 +32,14 @@ void	Contact::setLastName(void)
 
 	while (1)
 	{
+		if (std::cin.eof())
+			return;
 		std::cout << "Last Name : ";
 		std::getline(std::cin, input);
 		if (input.length() != 0)
 		{
 			lastName = input;
-			break ;
+			break;
 		}
 	}
 }
@@ -43,12 +50,14 @@ void	Contact::setNickname(void)
 
 	while (1)
 	{
+		if (std::cin.eof())
+			return;
 		std::cout << "Nickname : ";
 		std::getline(std::cin, input);
 		if (input.length() != 0)
 		{
 			nickname = input;
-			break ;
+			break;
 		}
 	}
 }
@@ -59,12 +68,14 @@ void	Contact::setPhoneNbr(void)
 
 	while (1)
 	{
+		if (std::cin.eof())
+			return;
 		std::cout << "Phone Number : ";
 		std::getline(std::cin, input);
 		if (input.length() != 0)
 		{
 			phoneNbr = input;
-			break ;
+			break;
 		}
 	}
 }
@@ -75,12 +86,14 @@ void	Contact::setDarkestSecret(void)
 
 	while (1)
 	{
+		if (std::cin.eof())
+			return;
 		std::cout << "Darkest Secret : ";
 		std::getline(std::cin, input);
 		if (input.length() != 0)
 		{
 			darkestSecret = input;
-			break ;
+			break;
 		}
 	}
 }
