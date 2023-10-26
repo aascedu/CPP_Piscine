@@ -1,3 +1,4 @@
+#include <locale>
 #include <iostream>
 
 class Contact
@@ -16,5 +17,7 @@ public:
 	void	setNickname(void);
 	void	setPhoneNbr(void);
 	void	setDarkestSecret(void);
+	void	getContact(void);
+	void	printContactInBook(int i);
 	~Contact();
 };

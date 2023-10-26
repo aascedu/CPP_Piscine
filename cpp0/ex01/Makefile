@@ -10,7 +10,7 @@ CPP = c++
 RM = @rm -rf
 CPPFLAGS = -Wall -Werror -Wextra -I./include/ -std=c++98
 
-NAME = phonebook
+NAME = PhoneBook
 
 all: $(OBJS_DIR)
 	@make $(NAME)

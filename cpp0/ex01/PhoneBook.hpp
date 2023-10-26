@@ -8,4 +8,5 @@ public:
 	PhoneBook();
 	~PhoneBook();
 	void	addContact(int index);
+	void	searchContact(void);
 };

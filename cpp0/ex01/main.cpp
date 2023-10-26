@@ -19,6 +19,8 @@ int	main()
 			if (index == 8)
 				index = 0;
 		}
+		else if (input == "SEARCH")
+			book.searchContact();
 		else if (input == "EXIT")
 			break;
 		if (std::cin.eof())
