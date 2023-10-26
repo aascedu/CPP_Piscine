@@ -19,7 +19,7 @@ all: $(OBJS_DIR)
 	$(CPP) $(CPPFLAGS) -o $@ -c $<
 
 $(NAME): $(OBJS) $(HEADER)
-	$(CPP) $(CPPFLAGS) $(OBJS) -o PhoneBook
+	$(CPP) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	$(RM) $(OBJS)
