@@ -12,7 +12,7 @@ CPPFLAGS = -Wall -Werror -Wextra -I./include/ -std=c++98
 
 NAME = PhoneBook
 
-all: $(OBJS_DIR)
+all:
 	@make $(NAME)
 
 %.o : %.cpp

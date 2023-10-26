@@ -11,7 +11,7 @@ CPPFLAGS = -Wall -Werror -Wextra -I./include/ -std=c++98
 
 NAME = 
 
-all: $(OBJS_DIR)
+all:
 	@make $(NAME)
 
 %.o : %.cpp
