@@ -57,6 +57,7 @@ bool Account::makeWithdrawal(int withdrawal)
 	if (_amount > withdrawal)
 	{
 		_amount -= withdrawal;
+		Account::_totalAmount -= withdrawal;
 		Account::_totalNbWithdrawals++;
 		_nbWithdrawals++;
 		return (true);
