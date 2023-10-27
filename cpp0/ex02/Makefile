@@ -9,16 +9,16 @@ CPP = c++
 RM = @rm -rf
 CPPFLAGS = -Wall -Werror -Wextra -I./include/ -std=c++98
 
-NAME = 
+NAME = dreamJob
 
 all:
-	@make $(NAME)
+	make $(NAME)
 
-%.o : %.cpp
-	$(CPP) $(CPPFLAGS) -o $@ -c $<
-
-$(NAME): $(OBJS) $(HEADER)
+$(NAME): $(OBJS) 
 	$(CPP) $(CPPFLAGS) $(OBJS) -o $(NAME)
+
+%.o : %.cpp $(HEADER)
+	$(CPP) $(CPPFLAGS) -o $@ -c $<
 
 clean:
 	$(RM) $(OBJS)
@@ -27,6 +27,6 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean
-	@make all
+	make all
 
 .PHONY: all clean fclean re
