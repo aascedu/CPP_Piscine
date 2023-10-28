@@ -7,6 +7,7 @@ Zombie::Zombie( std::string instName ) : name(instName)
 
 Zombie::~Zombie()
 {
+	std::cout << this->name << " destructor called." << std::endl;
 }
 
 void Zombie::announce( void )
