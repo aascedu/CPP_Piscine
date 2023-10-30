@@ -3,3 +3,4 @@
 ./mySed 1 2
 ./mySed main.cpp std:: "OUAIS PK ON A PAS LE DROIT A NAMESPACE???"
 ./mySed Makefile a
+./mySed Makefile "all" "all all"
