@@ -1,5 +1,5 @@
 ./mySed Makefile all ALL
 ./mySed
 ./mySed 1 2
-./mySed Makefile $(NAME) XXXXXXXXXXXXXXXXXXX
+./mySed main.cpp std:: "OUAIS PK ON A PAS LE DROIT A NAMESPACE???"
 ./mySed Makefile a

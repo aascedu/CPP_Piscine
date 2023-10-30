@@ -17,22 +17,23 @@ int	main(int argc, char **argv)
 		is.read(buffer, length);
 		is.close();
 		buffer[length] = '\0';
-		std::cout << buffer << std::endl;
 		std::string str = buffer;
 		delete[] buffer;
 		std::string	search = argv[2];
+		std::string	add = argv[3];
+		int	pos = 0;
 		while (1)
 		{
-			if (str.find(argv[2]) != std::string::npos)
+			if (str.find(argv[2], pos) != std::string::npos)
 			{
-				int	pos = str.find(argv[2]);
+				pos = str.find(argv[2], pos);
 				str.erase(pos, search.length());
 				str.insert(pos, argv[3]);
+				pos += add.length();
 			}
 			else
 				break;
 		}
-		std::cout << str << std::endl;
 		std::string	filename = argv[1];
 		filename.insert(filename.length(), ".replace");
 		std::ofstream	outfile;
