@@ -1,0 +1,5 @@
+./mySed Makefile all ALL
+./mySed
+./mySed 1 2
+./mySed Makefile $(NAME) XXXXXXXXXXXXXXXXXXX
+./mySed Makefile a

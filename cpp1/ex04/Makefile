@@ -1,7 +1,4 @@
-SRCS = 	main.cpp \
-		# openFile.cpp
-
-# HEADER = openFil
+SRCS = 	main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
