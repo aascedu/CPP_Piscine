@@ -1,4 +1,7 @@
-SRCS = 	main.cpp
+SRCS = 	main.cpp \
+		Harl.cpp
+
+HEADER = Harl.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -6,7 +9,7 @@ CPP = c++
 RM = @rm -rf
 CPPFLAGS = -Wall -Werror -Wextra -I./include/ -std=c++98
 
-NAME = mySed
+NAME = Harl
 
 all:
 	make $(NAME)
@@ -14,7 +17,7 @@ all:
 $(NAME): $(OBJS) 
 	$(CPP) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
-%.o : %.cpp
+%.o : %.cpp $(HEADER)
 	$(CPP) $(CPPFLAGS) -o $@ -c $<
 
 clean:
