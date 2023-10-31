@@ -2,31 +2,31 @@
 
 Fixed::Fixed() : _i(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	// std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed( const Fixed &instance )
 {
 	*this = instance;
-	std::cout << "Copy constructor called" << std::endl;
+	// std::cout << "Copy constructor called" << std::endl;
 }
 
 Fixed::Fixed( const int nbr )
 {
-	std::cout << "Int constructor called" << std::endl;
+	// std::cout << "Int constructor called" << std::endl;
 	this->_i = nbr << this->_fractionBits;
 
 }
 
 Fixed::Fixed( const float nbr )
 {
-	std::cout << "Float constructor called" << std::endl;
+	// std::cout << "Float constructor called" << std::endl;
 	this->_i = roundf(nbr * (1 << this->_fractionBits));
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor Called" << std::endl;
+	// std::cout << "Destructor Called" << std::endl;
 }
 
 std::ostream	&operator<<(std::ostream &ostream, const Fixed &nbr)
@@ -38,7 +38,7 @@ std::ostream	&operator<<(std::ostream &ostream, const Fixed &nbr)
 Fixed	&Fixed::operator=(const Fixed &ref)
 {
 	this->_i = ref._i;
-	std::cout << "Copy assignment operator called" << std::endl;
+	// std::cout << "Copy assignment operator called" << std::endl;
 	return (*this);
 }
 
@@ -116,6 +116,33 @@ Fixed	Fixed::operator/(const Fixed &nbr) const
 	return (add);
 }
 
+Fixed	&Fixed::operator++()
+{
+	_i++;
+	return (*this);
+}
+
+Fixed	Fixed::operator++(int)
+{
+	Fixed	temp = *this;
+	++*this;
+	return (temp);
+}
+
+Fixed	&Fixed::operator--()
+{
+	_i--;
+	return (*this);
+}
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed	temp = *this;
+	--*this;
+	return (temp);
+}
+
+
 int Fixed::getRawBits( void ) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
@@ -136,4 +163,20 @@ float	Fixed::toFloat( void ) const
 int	Fixed::toInt( void ) const
 {
 	return (this->_i / (1 << this->_fractionBits));
+}
+
+Fixed	&Fixed::min(Fixed &a, Fixed &b)
+{
+	if (a < b)
+		return (a);
+	else
+		return (b);
+}
+
+Fixed const	&Fixed::min(const Fixed &a, const Fixed &b)
+{
+	if (a._i < b._i)
+		return (a);
+	else
+		return (b);
 }
