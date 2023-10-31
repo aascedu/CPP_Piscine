@@ -167,7 +167,7 @@ int	Fixed::toInt( void ) const
 
 Fixed	&Fixed::min(Fixed &a, Fixed &b)
 {
-	if (a < b)
+	if (a._i < b._i)
 		return (a);
 	else
 		return (b);
