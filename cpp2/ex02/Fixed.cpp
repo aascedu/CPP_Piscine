@@ -180,3 +180,19 @@ Fixed const	&Fixed::min(const Fixed &a, const Fixed &b)
 	else
 		return (b);
 }
+
+Fixed	&Fixed::max(Fixed &a, Fixed &b)
+{
+	if (a._i > b._i)
+		return (a);
+	else
+		return (b);
+}
+
+Fixed const	&Fixed::max(const Fixed &a, const Fixed &b)
+{
+	if (a._i > b._i)
+		return (a);
+	else
+		return (b);
+}
