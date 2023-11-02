@@ -3,16 +3,34 @@
 
 int main( void )
 {
-	Fixed a;
-	Fixed const b( 10 );
-	Fixed const c( 42.42f );
-	Fixed const d( b );
+	Fixed		a;
+	Fixed const	b( Fixed( 5.05f ) * Fixed( 2 ) );
 
-	a = Fixed( 0.f );
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
 
-	std::cout << "HEY : " << --a << std::endl;
-	std::cout << "ICI : " << a << std::endl;
-	if (b >= a)
-		std::cout << " Hey" << std::endl;
+	std::cout << b << std::endl;
+	
+	Fixed	c(3), d(10000);
+
+	std::cout << "Min and Max with Int and Float" << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
+	std::cout << Fixed::min( c, d ) << std::endl;
+	
+	std::cout << "+ : ";
+	std::cout << a + b << std::endl;
+
+	std::cout << "- : ";
+	std::cout << a - b << std::endl;
+
+	std::cout << "* : ";
+	std::cout << a * b << std::endl;
+
+	std::cout << "/ : ";
+	std::cout << a / b << std::endl;
+
 	return 0;
 }
