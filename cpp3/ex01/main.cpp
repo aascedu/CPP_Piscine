@@ -1,35 +1,68 @@
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main(void)
 {
-	ClapTrap	thea("Thea");
-	ClapTrap	henri("Henri");
-	ClapTrap	test;
+	ScavTrap	A;
 
-	test = thea;
+	A.attack("LE CHAT");
 
-	test.attack("Mao Zedong");
+	A = ScavTrap("Elon Monsk");
 
-	thea.attack("Vladimir Putin");
-	thea.beRepaired(0);
-	thea.beRepaired(-1);
-	thea.takeDamage(5);
-	thea.attack("Amid Dada");
-	thea.beRepaired(22);
-	thea.beRepaired(22);
-	thea.beRepaired(22);
-	thea.beRepaired(0);
-	thea.beRepaired(0);
-	thea.beRepaired(0);
-	thea.beRepaired(0);
-	thea.beRepaired(0);
-	thea.beRepaired(0);
-	thea.beRepaired(1);
-	thea.attack("Amid Dada");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.guardGate();
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.guardGate();
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Pierre Palmade");
+	A.attack("Josephine Ange Guardien");
 
-	henri.beRepaired(200);
-	henri.takeDamage(-100);
-	henri.takeDamage(-1);
-	
+	ScavTrap	TEST("TEST");
 	return (0);
 }
