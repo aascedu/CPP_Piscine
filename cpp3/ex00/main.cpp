@@ -4,6 +4,12 @@ int	main(void)
 {
 	ClapTrap	thea("Thea");
 	ClapTrap	henri("Henri");
+	ClapTrap	test;
+
+
+	test.attack("Joe Biden");
+	test = thea;
+	test.attack("Mao Zedong");
 
 	thea.attack("Vladimir Putin");
 	thea.beRepaired(0);
