@@ -1,9 +1,12 @@
 SRCS = 	main.cpp \
-		ClapTrap.cpp \
-		ScavTrap.cpp \
-		FragTrap.cpp
+		Animal.cpp \
+		Dog.cpp \
+		Cat.cpp \
+		WrongAnimal.cpp \
+		WrongCat.cpp \
+		Brain.cpp
 
-HEADER = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
+HEADER = header.h
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -11,7 +14,7 @@ CPP = c++
 RM = @rm -rf
 CPPFLAGS = -Wall -Werror -Wextra -I. -std=c++98
 
-NAME = FragTrap
+NAME = Animal
 
 all:
 	make $(NAME)
