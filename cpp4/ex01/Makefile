@@ -6,13 +6,13 @@ SRCS = 	main.cpp \
 		WrongCat.cpp \
 		Brain.cpp
 
-HEADER = header.h
+HEADER = header.h Brain.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
 CPP = c++
 RM = @rm -rf
-CPPFLAGS = -Wall -Werror -Wextra -I. -std=c++98
+CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 
 NAME = Animal
 

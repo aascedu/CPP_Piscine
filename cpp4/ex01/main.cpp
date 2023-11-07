@@ -2,25 +2,47 @@
 
 int main( void )
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	Dog test;
+	
+	test.callHey();
+	std::cout << "hey----" << std::endl;
+	test.showIdeas();
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound();
-	j->makeSound();
-	meta->makeSound();
+	Dog	test1;
+	
+	test1.callHo();
+	std::cout << "ho----" << std::endl;
+	test1.showIdeas();
+	test1 = test;
 
-	delete meta;
-	delete i;
-	delete j;
+	std::cout << "hey----" << std::endl;
+	test1.showIdeas();
+	test.callHo();
+	std::cout << "ho----" << std::endl;
+	test.showIdeas();
+	std::cout << "hey----" << std::endl;
+	test1.showIdeas();
 
-	const WrongAnimal	*chatmauvais = new WrongCat();
+	Cat chat;
+	
+	chat.callHey();
+	std::cout << "hey----" << std::endl;
+	chat.showIdeas();
 
-	std::cout << chatmauvais->getType() << " " << std::endl;
-	chatmauvais->makeSound();
+	Cat	chat1;
+	
+	chat1.callHo();
+	std::cout << "ho----" << std::endl;
+	chat1.showIdeas();
+	chat1 = chat;
 
-	delete chatmauvais;
+	std::cout << "hey----" << std::endl;
+	chat1.showIdeas();
+	chat.callHo();
+	std::cout << "ho----" << std::endl;
+	chat.showIdeas();
+	std::cout << "hey----" << std::endl;
+	chat1.showIdeas();
+
 	return 0;
 }

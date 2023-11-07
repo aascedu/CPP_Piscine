@@ -12,25 +12,12 @@ class Brain
 		~Brain();
 		Brain( const Brain &ref );
 		Brain	&operator=( const Brain &ref );
+		void	setIdeasHey( void );
+		void	setIdeasHo( void );
+		void	showIdeas( void );
 };
 
-Brain::Brain()
-{
-}
 
-Brain::~Brain()
-{
-}
-
-Brain::Brain( const Brain &ref )
-{
-
-}
-
-Brain	&Brain::operator=( const Brain &ref )
-{
-
-}
 
 
 
