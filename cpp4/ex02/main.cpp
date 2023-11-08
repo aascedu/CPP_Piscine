@@ -44,5 +44,8 @@ int main( void )
 	std::cout << "hey----" << std::endl;
 	chat1.showIdeas();
 
+	// Decommente ca et ca compilera pas.
+	// Animal	animal;
+
 	return 0;
 }
