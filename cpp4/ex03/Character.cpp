@@ -75,9 +75,9 @@ void Character::equip(AMateria* m)
 	{
 		if (this->_spells[i] == NULL)
 		{
-			this->_spells[i] = m->clone();
-			delete m;
-			std::cout << "Materia added to inventory spot nb : " << i << std::endl;
+			this->_spells[i] = m;
+			// delete m;
+			std::cout << "Materia added to inventory spot nb : " << i + 1 << std::endl;
 			return ;
 		}
 	}
@@ -86,13 +86,14 @@ void Character::equip(AMateria* m)
 
 void Character::unequip(int idx)
 {
-	std::cout << idx << std::endl;
+	this->_spells[idx] = NULL;
 }
 
 void Character::use(int idx, ICharacter& target)
 {
 	if (this->_spells[idx] != NULL)
 	{
+		std::cout << this->getName() << " : ";
 		this->_spells[idx]->use(target);
 		delete this->_spells[idx];
 		this->_spells[idx] = NULL;
