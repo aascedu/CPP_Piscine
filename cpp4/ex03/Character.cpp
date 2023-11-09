@@ -76,7 +76,6 @@ void Character::equip(AMateria* m)
 		if (this->_spells[i] == NULL)
 		{
 			this->_spells[i] = m;
-			// delete m;
 			std::cout << "Materia added to inventory spot nb : " << i + 1 << std::endl;
 			return ;
 		}
@@ -86,11 +85,17 @@ void Character::equip(AMateria* m)
 
 void Character::unequip(int idx)
 {
-	this->_spells[idx] = NULL;
+	if (idx >= 0 && idx < 4)
+		this->_spells[idx] = NULL;
+	return ;
 }
 
 void Character::use(int idx, ICharacter& target)
 {
+	if (idx > 4)
+		return ;
+	if (idx < 0)
+		return ;
 	if (this->_spells[idx] != NULL)
 	{
 		std::cout << this->getName() << " : ";

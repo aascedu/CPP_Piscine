@@ -27,6 +27,7 @@ Dog	&Dog::operator=( const Dog &ref )
 
 Dog::~Dog()
 {
+	delete this->_cerveau;
 	std::cout << "Dog Destructor call" << std::endl;
 }
 

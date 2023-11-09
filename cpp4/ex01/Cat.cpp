@@ -27,6 +27,7 @@ Cat	&Cat::operator=( const Cat &ref )
 
 Cat::~Cat()
 {
+	delete this->_cerveau;
 	std::cout << "Cat Destructor call" << std::endl;
 }
 

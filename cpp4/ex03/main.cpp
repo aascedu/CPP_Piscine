@@ -27,13 +27,13 @@ int main(void)
 
 	ICharacter* bob = new Character("bob");
 
-	me->use(0, *bob);
-	me->use(1, *bob);
+	me->use(-1, *bob);
+	me->use(10, *bob);
 
-	me->unequip(3);
-	me->equip(tmp3);
-	me->use(0, *bob);
+	me->unequip(-1);
+	me->unequip(10);
 
+	me->unequip(2);
 	me->unequip(2);
 	delete tmp2;
 	
