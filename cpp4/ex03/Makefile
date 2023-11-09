@@ -2,10 +2,10 @@ SRCS = 	main.cpp \
 		AMateria.cpp \
 		Cure.cpp \
 		Ice.cpp \
-		ICharacter.cpp \
-		Character.cpp
+		Character.cpp \
+		MateriaSource.cpp
 
-HEADER = AMateria.hpp Cure.hpp Ice.hpp ICharacter.hpp Character.hpp
+HEADER = AMateria.hpp Cure.hpp Ice.hpp ICharacter.hpp Character.hpp IMateriaSource.hpp MateriaSource.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 

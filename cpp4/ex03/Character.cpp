@@ -57,3 +57,46 @@ Character	&Character::operator=( const Character &ref )
 	std::cout << "Character Copy assignment call" << std::endl;
 	return (*this);
 }
+
+std::string const &Character::getName() const
+{
+	return (this->_name);
+}
+
+void Character::equip(AMateria* m)
+{
+	if (m == NULL)
+	{
+		std::cout << "Not a known spell, the spell you asked to equip is NULL" << std::endl;
+		return ;
+	}
+	int	i = -1;
+	while (++i < 4)
+	{
+		if (this->_spells[i] == NULL)
+		{
+			this->_spells[i] = m->clone();
+			delete m;
+			std::cout << "Materia added to inventory spot nb : " << i << std::endl;
+			return ;
+		}
+	}
+	std::cout << "No empty spot in inventory" << std::endl;
+}
+
+void Character::unequip(int idx)
+{
+	std::cout << idx << std::endl;
+}
+
+void Character::use(int idx, ICharacter& target)
+{
+	if (this->_spells[idx] != NULL)
+	{
+		this->_spells[idx]->use(target);
+		delete this->_spells[idx];
+		this->_spells[idx] = NULL;
+	}
+	else
+		std::cout << "No Spell in the inventory spot nb : " << idx << std::endl;
+}

@@ -12,7 +12,7 @@ class AMateria
 	public:
 		AMateria();
 		AMateria( const AMateria &ref );
-		~AMateria();
+		virtual ~AMateria();
 		AMateria(std::string const &type);
 		AMateria	&operator=( const AMateria &ref );
 		std::string const &getType() const;
