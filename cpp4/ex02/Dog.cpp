@@ -11,7 +11,7 @@ Dog::Dog( const Dog &ref )
 {
 	this->_type = ref._type;
 	this->_cerveau = new Brain();
-	this->_cerveau = ref._cerveau;
+	*(this->_cerveau) = *(ref._cerveau);
 	std::cout << "Dog Copy constructor call" << std::endl;
 }
 

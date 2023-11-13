@@ -12,7 +12,8 @@ OBJS = $(SRCS:.cpp=.o)
 
 CPP = c++
 RM = @rm -rf
-CPPFLAGS = -Wall -Werror -Wextra -std=c++98
+CPPFLAGS = -Wall -Werror -Wextra -std=c++98 -g3 -fsanitize=address
+
 
 NAME = Animal
 

@@ -3,6 +3,9 @@
 int main( void )
 {
 	Dog test;
+	{
+		Dog crash = test;
+	}
 	
 	test.callHey();
 	std::cout << "hey----" << std::endl;

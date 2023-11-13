@@ -11,7 +11,7 @@ Cat::Cat( const Cat &ref )
 {
 	this->_type = ref._type;
 	this->_cerveau = new Brain();
-	this->_cerveau = ref._cerveau;
+	*(this->_cerveau) = *(ref._cerveau);
 	std::cout << "Cat Copy constructor call" << std::endl;
 }
 
