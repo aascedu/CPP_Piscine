@@ -2,10 +2,12 @@
 
 Bureaucrat::Bureaucrat() : _name("empty"), _grade(150)
 {
+	std::cout << "Bureaucrat Default constructor call" << std::endl;
 }
 
 Bureaucrat::~Bureaucrat()
 {
+	std::cout << "Bureaucrat Destructor call" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const std::string name, const int grade)
@@ -17,7 +19,7 @@ Bureaucrat::Bureaucrat(const std::string name, const int grade)
 		throw Bureaucrat::GradeTooLowException();
 	else
 		this->_grade = grade;
-	std::cout << "Bureaucrat Default constructor call" << std::endl;
+	std::cout << "Bureaucrat Name / Grade constructor call" << std::endl;
 }
 
 Bureaucrat::Bureaucrat( const Bureaucrat &ref )
@@ -73,4 +75,19 @@ std::ostream	&operator<<(std::ostream &ostream, const Bureaucrat &ref)
 {
 	ostream << ref.getName() << ", bureaucrat grade : " << ref.getGrade() << std::endl;
 	return (ostream);
+}
+
+void	Bureaucrat::signForm( Form &ref )
+{
+	try
+	{
+		ref.beSigned(*this);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << this->getName() << " couldn't sign " << ref.getName() << " because ";
+		std::cerr << e.what() << '\n';
+	}
+	if (ref.getIsSigned() == true)
+		std::cout << this->getName() << " signed " << ref.getName() << std::endl;
 }
