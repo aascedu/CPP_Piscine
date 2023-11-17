@@ -82,14 +82,12 @@ void	Bureaucrat::signForm( AForm &ref )
 	try
 	{
 		ref.beSigned(*this);
+		std::cout << this->getName() << " signed " << ref.getName() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << this->getName() << " couldn't sign " << ref.getName() << " because ";
-		std::cerr << e.what() << '\n';
+		std::cerr << "\033[1;31m" << e.what() << "\033[0m" << std::endl;
 	}
-	if (ref.getIsSigned() == true)
-		std::cout << this->getName() << " signed " << ref.getName() << std::endl;
 }
 
 void	Bureaucrat::executeForm( const AForm &form )

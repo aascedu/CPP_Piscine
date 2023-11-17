@@ -34,10 +34,7 @@ PresidentialPardonForm::PresidentialPardonForm( std::string target ) : AForm("Pr
 void	PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
 	if (this->getIsSigned() == false)
-	{
-		std::cout << this->getName() << " is not signed" << std::endl;
-		return ;
-	}
+		throw AForm::FormNotSignedException();
 	else
 	{
 		if (executor.getGrade() > this->getExecGrade())

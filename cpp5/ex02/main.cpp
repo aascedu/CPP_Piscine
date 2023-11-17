@@ -42,6 +42,7 @@ int main()
 		Bureaucrat fake("Francocis Hollande", 150);
 		Bureaucrat prez("Francois Hollande", 1);
 		prez.signForm(*form2);
+		prez.signForm(*form2);
 		form2->execute(prez);
 		form2->execute(fake);
 		form2->execute(prez);

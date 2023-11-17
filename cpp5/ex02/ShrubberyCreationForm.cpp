@@ -53,7 +53,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 
 	}
 	else
-		std::cout << this->getName() << " is not signed." << std::endl;
+		throw AForm::FormNotSignedException();
 }
 
 const std::string	&ShrubberyCreationForm::getTarget( void ) const
