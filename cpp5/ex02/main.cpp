@@ -50,7 +50,13 @@ int main()
 	{
 		std::cerr << "\033[1;33m" << e.what() << "\033[0m" << '\n';
 	}
+	AForm *form3 = new PresidentialPardonForm("Manu Max");
+	Bureaucrat	last("Dark Vador", 1);
+	last.executeForm(*form3);
+	last.signForm(*form3);
+	last.executeForm(*form3);
 	delete formPardon;
 	delete form1;
 	delete form2;
+	delete form3;
 }
