@@ -3,10 +3,13 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
-	AForm *formPardon = new PresidentialPardonForm("Bandit");
+	Intern	stagiaire;
+
+	AForm *formPardon = stagiaire.makeForm("shrubbery creation", "home");
 	try
 	{
 		Bureaucrat fake("Francocis Hollande", 150);
