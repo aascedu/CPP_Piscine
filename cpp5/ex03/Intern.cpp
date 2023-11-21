@@ -5,25 +5,30 @@
 
 Intern::Intern()
 {
-	std::cout << "Intern Default constructor call" << std::endl;
+	// std::cout << "Intern Default constructor call" << std::endl;
 }
 
 Intern::~Intern()
 {
-	std::cout << "Intern Destructor call" << std::endl;
+	// std::cout << "Intern Destructor call" << std::endl;
 }
 
 Intern::Intern( const Intern &ref )
 {
 	*this = ref;
-	std::cout << "Intern Copy constructor call" << std::endl;
+	// std::cout << "Intern Copy constructor call" << std::endl;
 }
 
 Intern	&Intern::operator=( const Intern &ref )
 {
-	std::cout << "Intern Copy operator call" << std::endl;
-	*this = ref;
+	// std::cout << "Intern Copy operator call" << std::endl;
+	if (this != &ref)
+		*this = ref;
 	return (*this);
+}
+
+const char* Intern::NoFormException::what() const throw() {
+	return ("No form found.");
 }
 
 AForm	*Intern::makeForm(std::string form, std::string target)
@@ -48,6 +53,9 @@ AForm	*Intern::makeForm(std::string form, std::string target)
 			return (array_constructor[i]);
 		}
 	}
-	std::cout << "No form found..." << std::endl;
+	delete array_constructor[0];
+	delete array_constructor[1];
+	delete array_constructor[2];
+	throw Intern::NoFormException();
 	return (NULL);
 }
