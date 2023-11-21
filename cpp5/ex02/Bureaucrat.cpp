@@ -10,9 +10,8 @@ Bureaucrat::~Bureaucrat()
 	// std::cout << "Bureaucrat Destructor call" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const std::string name, const int grade)
+Bureaucrat::Bureaucrat(const std::string name, const int grade) : _name(name)
 {
-	this->_name = name;
 	if (grade < MAX_GRADE)
 		throw Bureaucrat::GradeTooHighException();
 	else if (grade > MIN_GRADE)
@@ -24,14 +23,12 @@ Bureaucrat::Bureaucrat(const std::string name, const int grade)
 
 Bureaucrat::Bureaucrat( const Bureaucrat &ref )
 {
-	this->_name = ref._name;
 	this->_grade = ref._grade;
 	// std::cout << "Bureaucrat Copy constructor call" << std::endl;
 }
 
 Bureaucrat &Bureaucrat::operator=( const Bureaucrat &ref )
 {
-	this->_name = ref._name;
 	this->_grade = ref._grade;
 	// std::cout << "Bureaucrat Copy operator call" << std::endl;
 	return (*this);
