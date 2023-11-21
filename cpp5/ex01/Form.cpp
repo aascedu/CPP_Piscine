@@ -17,7 +17,6 @@ Form::Form( const Form &ref ) : _name(ref.getName()), _isSigned(ref.getIsSigned(
 
 Form	&Form::operator=( const Form &ref )
 {
-	this->_name = ref.getName();
 	this->_isSigned = ref.getIsSigned();
 	std::cout << "Form Copy operator call" << std::endl;
 	return (*this);
