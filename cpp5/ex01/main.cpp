@@ -5,7 +5,7 @@ int main()
 {
 	try
 	{
-		Form QNF("49:3", 149, 30);
+		Form QNF("49:3", 149, 9);
 		Bureaucrat prez("Francois Hollande", 150);
 		prez.incrementGrade( );
 		prez.signForm(QNF);
