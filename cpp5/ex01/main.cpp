@@ -3,10 +3,12 @@
 
 int main()
 {
-	Form QNF("49:3", 120, 30);
 	try
 	{
-		Bureaucrat prez("Francois Hollande", 1);
+		Form QNF("49:3", 149, 30);
+		Bureaucrat prez("Francois Hollande", 150);
+		prez.incrementGrade( );
+		prez.signForm(QNF);
 		prez.signForm(QNF);
 		std::cout << QNF;
 	}

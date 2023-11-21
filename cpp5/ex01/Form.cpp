@@ -74,9 +74,15 @@ const char* Form::GradeTooLowException::what() const throw() {
 	return ("Form's grade is too low!");
 }
 
+const char* Form::FormAlreadySignedException::what() const throw() {
+	return ("Form's is already signed!");
+}
+
 void	Form::beSigned( const Bureaucrat &ref )
 {
+	if (this->getIsSigned() == true)
+		throw Form::FormAlreadySignedException();
 	if (ref.getGrade() > this->_signGrade)
-		throw GradeTooHighException();
+		throw Form::GradeTooHighException();
 	this->_isSigned = true;
 }
