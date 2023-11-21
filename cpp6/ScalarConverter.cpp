@@ -149,62 +149,53 @@ void ScalarConverter::convert(std::string &input)
 	}
 	else if (isInt(input)) {
 		double	value = atof(input.c_str());
-		if (value > INT_MAX || value < INT_MIN)
-			std::cout << "Int limits reached." << std::endl;
+		if (value < 0 || value > 127)
+			std::cout << "char : impossible." << std::endl;
+		else if (!isprint(value))
+			std::cout << "Non displayable." << std::endl;
 		else
-		{
-			if (value < 0 || value > 127)
-				std::cout << "char : impossible." << std::endl;
-			else if (!isprint(value))
-				std::cout << "Non displayable." << std::endl;
-			else
-				std::cout << "char : '" << static_cast<char>(value) << "'" << std::endl;
+			std::cout << "char : '" << static_cast<char>(value) << "'" << std::endl;
+		if (value > INT_MAX || value < INT_MIN)
+			std::cout << "int : impossible." << std::endl;
+		else
 			std::cout << "int : " << value << "" << std::endl;
-			std::cout << "float : " << static_cast<float>(value) << "f" << std::endl;
-			std::cout << "double : " << static_cast<double>(value) << "" << std::endl;
-		}
+		std::cout << "float : " << static_cast<float>(value) << "f" << std::endl;
+		std::cout << "double : " << static_cast<double>(value) << "" << std::endl;
 	}
 	else if (isFloat(input))
 	{
-		float	value = atof(input.c_str());
-		if (value > __FLT_MAX__ || value < __FLT_MIN__)
-			std::cout << "Float limits reached." << std::endl;
+		double	value = atof(input.c_str());
+		if (value < 0 || value > 127)
+			std::cout << "char : impossible." << std::endl;
+		else if (!isprint(value))
+			std::cout << "Non displayable." << std::endl;
 		else
-		{
-			if (value < 0 || value > 127)
-				std::cout << "char : impossible." << std::endl;
-			else if (!isprint(value))
-				std::cout << "Non displayable." << std::endl;
-			else
-				std::cout << "char : '" << static_cast<char>(value) << "'" << std::endl;
-			if (value > INT_MAX || value < INT_MIN)
-				std::cout << "int : impossible." << std::endl;
-			else
-				std::cout << "int : " << static_cast<int>(value) << "" << std::endl;
-			std::cout << "float : " << value << "f" << std::endl;
-			std::cout << "double : " << static_cast<double>(value) << "" << std::endl;
-		}
+			std::cout << "char : '" << static_cast<char>(value) << "'" << std::endl;
+		if (value > 2147483647.0f || value < INT_MIN)
+			std::cout << "int : impossible." << std::endl;
+		else
+			std::cout << "int : " << static_cast<int>(value) << "" << std::endl;
+		std::cout << "float : " << value << "f" << std::endl;
+		std::cout << "double : " << static_cast<double>(value) << "" << std::endl;
 	}
 	else if (isDouble(input))
 	{
 		double	value = atof(input.c_str());
-		if (value > __DBL_MAX__ || value < __DBL_MIN__)
-			std::cout << "Double limits reached." << std::endl;
+		if (value < 0 || value > 127)
+			std::cout << "char : impossible." << std::endl;
+		else if (!isprint(value))
+			std::cout << "Non displayable." << std::endl;
 		else
-		{
-			if (value < 0 || value > 127)
-				std::cout << "char : impossible." << std::endl;
-			else if (!isprint(value))
-				std::cout << "Non displayable." << std::endl;
-			else
-				std::cout << "char : '" << static_cast<char>(value) << "'" << std::endl;
-			if (value > INT_MAX || value < INT_MIN)
-				std::cout << "int : impossible." << std::endl;
-			else
-				std::cout << "int : " << static_cast<int>(value) << "" << std::endl;
+			std::cout << "char : '" << static_cast<char>(value) << "'" << std::endl;
+		if (value > INT_MAX || value < INT_MIN)
+			std::cout << "int : impossible." << std::endl;
+		else
+			std::cout << "int : " << static_cast<int>(value) << "" << std::endl;
+		if (value > __FLT_MAX__ || value < __FLT_MIN__)
+			std::cout << "float : impossible." << std::endl;
+		else
 			std::cout << "float : " << static_cast<float>(value) << "f" << std::endl;
-			std::cout << "double : " << value << "" << std::endl;
-		}
+		std::cout << "double : " << value << "" << std::endl;
 	}
 	else
 		throw ScalarConverter::WrongInputException();
