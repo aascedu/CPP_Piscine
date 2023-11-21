@@ -135,11 +135,18 @@ void ScalarConverter::convert(std::string &input)
 		throw ScalarConverter::EmptyInputException();
 	else if (isPseudoFloat(input))
 	{
-		std::cout << "char : NANf" << std::endl;
+		std::cout << "char : Non displayable." << std::endl;
+		std::cout << "int : impossible." << std::endl;
+		std::cout << "float : " << input << std::endl;
+		input.erase(input.find_last_of('f'));
+		std::cout << "double : " << input << std::endl;
 	}
 	else if (isPseudoDouble(input))
 	{
-		std::cout << "char : NAN" << std::endl;
+		std::cout << "char : Non displayable." << std::endl;
+		std::cout << "int : impossible." << std::endl;
+		std::cout << "float : " << input << "f" << std::endl;
+		std::cout << "double : " << input << std::endl;
 	}
 	else if (isChar(input)) {
 		std::cout << "char : '" << input[0] << "'" << std::endl;
