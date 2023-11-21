@@ -16,7 +16,8 @@ int main()
 	std::cout << *Tom;
 	try
 	{
-		Tom->decrementGrade();
+		if (Tom)
+			Tom->incrementGrade();
 	}
 	catch(const std::exception &e)
 	{

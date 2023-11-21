@@ -17,21 +17,18 @@ Bureaucrat::Bureaucrat(const std::string name, const int grade)
 		throw Bureaucrat::GradeTooLowException();
 	else
 		this->_grade = grade;
-	std::cout << "Bureaucrat Default constructor call" << std::endl;
 }
 
 Bureaucrat::Bureaucrat( const Bureaucrat &ref )
 {
 	this->_name = ref._name;
 	this->_grade = ref._grade;
-	std::cout << "Bureaucrat Copy constructor call" << std::endl;
 }
 
 Bureaucrat &Bureaucrat::operator=( const Bureaucrat &ref )
 {
 	this->_name = ref._name;
 	this->_grade = ref._grade;
-	std::cout << "Bureaucrat Copy operator call" << std::endl;
 	return (*this);
 }
 
