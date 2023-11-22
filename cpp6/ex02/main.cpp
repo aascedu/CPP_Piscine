@@ -3,6 +3,7 @@
 #include "B.hpp"
 #include "C.hpp"
 #include <iostream>
+#include <stdlib.h>
 
 Base	*generate(void)
 {
