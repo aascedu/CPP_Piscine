@@ -1,6 +1,6 @@
 SRCS = 	main.cpp
 
-HEADER = Template.hpp
+HEADER = whatever.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
