@@ -8,7 +8,7 @@
 Base	*generate(void)
 {
 	std::srand(time( NULL ));
-	int	random = std::rand() % 4 + 1;
+	int	random = std::rand() % 3 + 1;
 
 	A	*retA;
 	B	*retB;
@@ -56,7 +56,6 @@ void	identify(Base &p)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
 	}
 	try
 	{		
@@ -66,7 +65,6 @@ void	identify(Base &p)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
 	}
 	try
 	{		
@@ -76,15 +74,14 @@ void	identify(Base &p)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
 	}
-	std::cout << "No Type" << std::endl;
 }
 
 int	main(void)
 {
 	Base	*rand = generate();
 	identify(rand);
+	identify(*rand);
 	delete rand;
 	return (0);
 }

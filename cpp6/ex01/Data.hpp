@@ -13,6 +13,9 @@ class Data
 			Data( const std::string name );
 			Data( const Data &ref );
 			Data	&operator=( const Data &ref );
+
+			static uintptr_t	serialize(Data* ptr);
+			static Data* 		deserialize(uintptr_t raw);
 };
 
 #endif
