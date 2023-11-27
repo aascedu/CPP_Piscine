@@ -12,7 +12,19 @@ class Array
 	public:
 		Array<T>();
 		~Array<T>();
+		Array<T>(const Array<T> &ref);
 		Array<T>(unsigned int n);
+		Array<T>	&operator=( const Array<T> &ref );
+		T	&operator[]( unsigned int i );
+		T	&operator[]( unsigned int i ) const;
+		class OutOfBoundsException : public std::exception
+		{
+			public:
+				virtual const char	*what() const throw();
+		};
+		unsigned int	size( void ) const;
 };
+
+# include "Array.tpp"
 
 #endif

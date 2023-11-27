@@ -3,18 +3,14 @@
 
 # include <iostream>
 
-template < typename T >
-void	iter(const T array[], int len, void func(const T &))
+template < typename T, typename U, typename V >
+void	iter(T array[], U len, V (func))
 {
-	int	i = -1;
-	while (++i < len)
-		func(array[i]);
-}
-
-template<typename T>
-void	printData(const T data)
-{
-	std::cout << data << std::endl;
+	if (!array || !func)
+		return ;
+	for (U i = 0; i < len; i++) {
+		(func)(array[i]);
+	}
 }
 
 #endif

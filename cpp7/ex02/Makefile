@@ -1,12 +1,12 @@
 SRCS = 	main.cpp
 
-HEADER = Array.hpp
+HEADER = Array.hpp Array.tpp
 
 OBJS = $(SRCS:.cpp=.o)
 
 CPP = c++
 RM = @rm -rf
-CPPFLAGS = -Wall -Werror -Wextra -I. -std=c++98
+CPPFLAGS = -Wall -Werror -Wextra -I. -fsanitize=address -g3 -std=c++98
 
 NAME = Array
 

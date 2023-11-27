@@ -17,7 +17,7 @@ ScalarConverter::ScalarConverter( const ScalarConverter &ref )
 	std::cout << "ScalarConverter Copy constructor call" << std::endl;
 }
 
-ScalarConverter	&ScalarConverter::operator=( const ScalarConverter &ref )
+ScalarConverter	&ScalarConverter::operator=( const ScalarConverter &ref ) 
 {
 	std::cout << "ScalarConverter Copy operator call" << std::endl;
 	if (this != &ref)
@@ -159,7 +159,7 @@ void ScalarConverter::convert(std::string &input)
 		if (value < 0 || value > 127)
 			std::cout << "char : impossible." << std::endl;
 		else if (!isprint(value))
-			std::cout << "Non displayable." << std::endl;
+			std::cout << "char : Non displayable." << std::endl;
 		else
 			std::cout << "char : '" << static_cast<char>(value) << "'" << std::endl;
 		if (value > INT_MAX || value < INT_MIN)
@@ -175,7 +175,7 @@ void ScalarConverter::convert(std::string &input)
 		if (value < 0 || value > 127)
 			std::cout << "char : impossible." << std::endl;
 		else if (!isprint(value))
-			std::cout << "Non displayable." << std::endl;
+			std::cout << "char : Non displayable." << std::endl;
 		else
 			std::cout << "char : '" << static_cast<char>(value) << "'" << std::endl;
 		if (value > 2147483647.0f || value < INT_MIN)
@@ -191,7 +191,7 @@ void ScalarConverter::convert(std::string &input)
 		if (value < 0 || value > 127)
 			std::cout << "char : impossible." << std::endl;
 		else if (!isprint(value))
-			std::cout << "Non displayable." << std::endl;
+			std::cout << "char : Non displayable." << std::endl;
 		else
 			std::cout << "char : '" << static_cast<char>(value) << "'" << std::endl;
 		if (value > INT_MAX || value < INT_MIN)

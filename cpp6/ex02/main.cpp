@@ -42,8 +42,6 @@ void	identify(Base *p)
 		std::cout << "Type B" << std::endl;
 	else if (dynamic_cast<C*>(p))
 		std::cout << "Type C" << std::endl;
-	else
-		std::cout << "Neither A, B or C." << std::endl;
 }
 
 void	identify(Base &p)
@@ -54,27 +52,23 @@ void	identify(Base &p)
 		std::cout << "Type A" << std::endl;
 		return ;
 	}
-	catch(const std::exception& e)
-	{
-	}
+	catch(const std::exception& e) {}
+
 	try
 	{		
 		(void)dynamic_cast<B &>(p);
 		std::cout << "Type B" << std::endl;
 		return ;
 	}
-	catch(const std::exception& e)
-	{
-	}
+	catch(const std::exception& e) {}
+
 	try
 	{		
 		(void)dynamic_cast<C &>(p);
 		std::cout << "Type C" << std::endl;
 		return ;
 	}
-	catch(const std::exception& e)
-	{
-	}
+	catch(const std::exception& e) {}
 }
 
 int	main(void)
