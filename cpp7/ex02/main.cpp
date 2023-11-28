@@ -8,7 +8,6 @@ int main(int, char**)
 {
 	const Array<int> numbers1(2);
 
-	// std::cout << numbers1 << std::endl;
 	std::cout << numbers1[0] << std::endl;
 	std::cout << numbers1[1] << std::endl;
 
