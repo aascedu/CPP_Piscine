@@ -2,18 +2,21 @@
 # define DATA_HPP
 
 # include <iostream>
+# include <stdint.h>
 
-class Data
+struct Data
+{
+	int	a;
+};
+
+class Serializer
 {
 		private:
-			std::string	_name;
+			Serializer();
+			~Serializer();
+			Serializer( const Serializer &ref );
+			Serializer	&operator=( const Serializer &ref );
 		public:
-			Data();
-			~Data();
-			Data( const std::string name );
-			Data( const Data &ref );
-			Data	&operator=( const Data &ref );
-
 			static uintptr_t	serialize(Data* ptr);
 			static Data* 		deserialize(uintptr_t raw);
 };

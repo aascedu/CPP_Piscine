@@ -13,10 +13,13 @@ Data* deserialize(uintptr_t raw)
 
 int	main(void)
 {
-	Data	test("Arthur");
-	uintptr_t	raw = serialize(&test);
+	Data	*a = new Data;
+
+	uintptr_t	raw = serialize(a);
 	Data	*ptr = deserialize(raw);
 
-	std::cout << &test << std::endl;
+	std::cout << a << std::endl;
 	std::cout << ptr << std::endl;
+
+	delete a;
 }

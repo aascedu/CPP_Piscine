@@ -1,23 +1,19 @@
 #include "Data.hpp"
 
-Data::Data()
+Serializer::Serializer()
 {
 }
 
-Data::~Data()
+Serializer::~Serializer()
 {
 }
 
-Data::Data( const std::string name ) : _name(name)
-{
-}
-
-Data::Data( const Data &ref )
+Serializer::Serializer( const Serializer &ref )
 {
 	*this = ref;
 }
 
-Data	&Data::operator=( const Data &ref )
+Serializer	&Serializer::operator=( const Serializer &ref )
 {
 	if (this != &ref)
 		*this = ref;
