@@ -1,14 +1,15 @@
-SRCS = 	main.cpp
+SRCS = 	main.cpp \
+		Span.cpp
 
-HEADER = Array.hpp Array.tpp
+HEADER = Span.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
 CPP = c++
 RM = @rm -rf
-CPPFLAGS = -Wall -Werror -Wextra -I. -fsanitize=address -g3 -std=c++98
+CPPFLAGS = -Wall -Werror -Wextra -I. -g3 -std=c++98
 
-NAME = Array
+NAME = Span
 
 all:
 	make $(NAME)
