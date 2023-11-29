@@ -24,10 +24,12 @@ int	main(void)
 	}
 	std::stack<int> s(mstack);
 
+	std::cout << std::endl;
+
 	std::list<int> mstack1;
 	mstack1.push_back(5);
 	mstack1.push_back(17);
-	std::cout << mstack1.end() << std::endl;
+	std::cout << mstack1.back() << std::endl;
 	mstack1.pop_back();
 	std::cout << mstack1.size() << std::endl;
 	mstack1.push_back(3);
