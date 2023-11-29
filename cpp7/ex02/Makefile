@@ -6,7 +6,11 @@ OBJS = $(SRCS:.cpp=.o)
 
 CPP = c++
 RM = @rm -rf
-CPPFLAGS = -Wall -Werror -Wextra -I.  -g3 -std=c++98 #-fsanitize=address
+CPPFLAGS = -Wall -Werror -Wextra -I. -MMD -MP -g3 -std=c++98 #-fsanitize=address 
+
+DEPS = $(SRCS:.cpp=.d)
+
+-include $(DEPS)
 
 NAME = Array
 
@@ -21,6 +25,7 @@ $(NAME): $(OBJS)
 
 clean:
 	$(RM) $(OBJS)
+	$(RM) $(DEPS)
 
 fclean: clean
 	$(RM) $(NAME)
