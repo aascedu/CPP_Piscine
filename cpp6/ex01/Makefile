@@ -7,7 +7,11 @@ OBJS = $(SRCS:.cpp=.o)
 
 CPP = c++
 RM = @rm -rf
-CPPFLAGS = -Wall -Werror -Wextra -I. -std=c++98
+CPPFLAGS = -Wall -Werror -Wextra -I. -std=c++98 -MMD -MP
+
+DEPS = $(SRCS:.cpp=.d)
+
+-include $(DEPS)
 
 NAME = Serial
 
@@ -22,6 +26,7 @@ $(NAME): $(OBJS)
 
 clean:
 	$(RM) $(OBJS)
+	$(RM) $(DEPS)
 
 fclean: clean
 	$(RM) $(NAME)

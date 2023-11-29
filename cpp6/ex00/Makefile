@@ -7,7 +7,11 @@ OBJS = $(SRCS:.cpp=.o)
 
 CPP = c++
 RM = @rm -rf
-CPPFLAGS = -Wall -Werror -Wextra -I. -std=c++98
+CPPFLAGS = -Wall -Werror -Wextra -I. -MMD -MP -std=c++98
+
+DEPS = $(SRCS:.cpp=.d)
+
+-include $(DEPS)
 
 NAME = Convert
 
@@ -25,7 +29,7 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
-	$(RM) *_shrubbery
+	$(RM) $(DEPS)
 
 re: fclean
 	make all
