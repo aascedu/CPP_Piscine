@@ -82,5 +82,4 @@ typename std::stack<T>::container_type::const_iterator	MutantStack<T>::crbegin()
 	return (std::stack<T>::c.crbegin());
 }
 
-
 #endif
