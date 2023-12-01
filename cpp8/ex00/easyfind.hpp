@@ -4,15 +4,10 @@
 #include <iostream>
 #include <algorithm>
 
-template< typename T >
-T easyfind(T &arg, const int val)
+template<class InputIterator, class T>
+InputIterator test(T &arg, const int val)
 {
-	for (size_t i = 0; i < arg.size(); i++)
-	{
-		if (arg[i] == val)
-			return (&arg[i]);
-	}
-	return (NULL);
+	return std::find(arg.begin(), arg.end(), val);
 }
 
 #endif

@@ -1,8 +1,18 @@
 #include "easyfind.hpp"
 #include <iostream>
+#include <vector>
 
 int	main(void)
 {
-	const std::string a = "v/usr/bin/../lib/gcc/x86_64-linux-gnu/10/../../../../include/c++/10/bits/basic_string.h:500:7: note: candidate constructor not viable: requires 4 arguments, but 1 was provided";
-	std::cout << easyfind(a, '+') << std::endl;
+	std::vector<int> a;
+
+	a.push_back(4);
+	a.push_back(9999);
+	a.push_back(7);
+	a.push_back(6);
+	a.push_back(2);
+
+	std::vector<int>::iterator res = test<std::vector<int>::iterator>(a, 7);
+
+	std::cout << *res << std::endl;
 }
