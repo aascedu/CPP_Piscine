@@ -1,4 +1,3 @@
-// fwewf
 #include "BitcoinExchange.hpp"
 
 int	main(int ac, char **av)
@@ -8,9 +7,12 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	std::ifstream	infile(av[1]);
-	std::string	content;
-	while (!infile.eof())
-		content + infile.get
-	std::cout << content << std::endl;
+	if (!infile.is_open()) {
+		std::cerr << "Error: could not open file." << std::endl;
+		return (1);
+	}
+	std::string line;
+	while (std::getline(infile, line))
+		std::cout << line << std::endl;
 	return (0);
 }
