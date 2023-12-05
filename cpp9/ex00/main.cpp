@@ -1,6 +1,6 @@
 #include "BitcoinExchange.hpp"
 
-void	check_date(std::string line, int i)
+void	check_line(std::string line, int i)
 {
 		i = line.find('-', i);
 		std::string year = line.substr(0, i);
@@ -55,7 +55,17 @@ void	check_date(std::string line, int i)
 				throw std::invalid_argument("only 31 days in this month.");
 			}
 		}
-		std::cout << line << std::endl;
+		std::string pipe = line.substr(i, 3);
+		if (pipe != " | ")
+			throw std::invalid_argument("what did you put between date and value ? cmon...");
+		std::string btcValue = line.substr(i + 3, line.length() - (i + 3));
+		std::istringstream ss_btc(btcValue);
+		float btc;
+		ss_btc >> btc;
+		if (!ss_day.eof() || ss_day.fail())
+			throw std::invalid_argument("day isn't an int or float.");
+		if (btc < 0 || btc > 1000)
+			throw std::invalid_argument("value must be between 0 and 1000.");
 }
 
 void	parsing(char *filename)
@@ -73,7 +83,7 @@ void	parsing(char *filename)
 		int	i = 0;
 		try
 		{
-			check_date(line, i);
+			check_line(line, i);
 		}
 		catch(const std::exception& e)
 		{
