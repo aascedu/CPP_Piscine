@@ -4,5 +4,7 @@
 # include <iostream>
 # include <fstream>
 # include <map>
+# include <stdexcept>
+# include <sstream>
 
 #endif
