@@ -45,6 +45,16 @@ void	check_date(std::string line, int i)
 			else if (!((!(yearNbr % 4) && yearNbr % 100) || !(yearNbr % 400)) && dayNbr > 28)
 				throw std::invalid_argument("non-leap years only have 28 days in february.");
 		}
+		if (monthNbr == 4 || monthNbr == 6 || monthNbr == 9 || monthNbr == 11) {
+			if (dayNbr > 30) {
+				throw std::invalid_argument("only 30 days in this month.");
+			}
+		}
+		else {
+			if (dayNbr > 31) {
+				throw std::invalid_argument("only 31 days in this month.");
+			}
+		}
 		std::cout << line << std::endl;
 }
 
@@ -69,16 +79,6 @@ void	parsing(char *filename)
 		{
 			std::cerr << e.what() << '\n';
 		}
-		//i = line.find('-', i);
-		//std::string year = line.substr(0, i);
-		//if (year.length() != 4)
-		//	throw std::invalid_argument("wrong year format.");
-		//int	check;
-		//std::istringstream	ss(year);
-		//ss >> check;
-		//if (!ss.eof() || ss.fail())
-		//	throw std::invalid_argument("year isn't an int.");
-		//std::cout << year << std::endl;
 	}
 }
 
