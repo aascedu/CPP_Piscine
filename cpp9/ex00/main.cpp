@@ -62,7 +62,7 @@ void	check_line(std::string line, int i)
 		std::istringstream ss_btc(btcValue);
 		float btc;
 		ss_btc >> btc;
-		if (!ss_day.eof() || ss_day.fail())
+		if (!ss_btc.eof() || ss_btc.fail())
 			throw std::invalid_argument("day isn't an int or float.");
 		if (btc < 0 || btc > 1000)
 			throw std::invalid_argument("value must be between 0 and 1000.");
