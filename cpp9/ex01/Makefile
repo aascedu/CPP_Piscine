@@ -1,6 +1,7 @@
-SRCS = 	main.cpp
+SRCS = 	main.cpp \
+		RPN.cpp
 
-HEADER = 
+HEADER = RPN.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -8,7 +9,7 @@ CPP = c++
 RM = @rm -rf
 CPPFLAGS = -Wall -Werror -Wextra -I. -g3 -std=c++98
 
-NAME = btc
+NAME = RPN
 
 all:
 	make $(NAME)
