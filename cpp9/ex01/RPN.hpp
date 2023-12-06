@@ -2,6 +2,7 @@
 # define RPN_HPP
 
 # include <iostream>
+# include <stdexcept>
 # include <stack>
 
 void	parsing(char *input);
