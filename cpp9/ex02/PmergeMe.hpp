@@ -7,6 +7,7 @@
 # include <stdlib.h>
 # include <deque>
 # include <vector>
+# include <algorithm>
 
 void	verifyInput(char **av);
 void	dequeSort(int ac, char **av);
