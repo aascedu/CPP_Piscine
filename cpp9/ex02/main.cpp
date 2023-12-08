@@ -18,20 +18,15 @@ int	main(int ac, char **av)
 		return (2);
 	}
 
-	struct timeval	startTime;
-	if (gettimeofday(&startTime, NULL) < 0)
-		return (3);
-
+	long long timeStart = ft_get_time_ms();
 	v = vectorSort(ac, av);
-	int	timeToSortV = getTime(startTime);
+	long long	timeToSortV = ft_get_time_ms() - timeStart;
 	if (timeToSortV < 0)
 		return (4);
 
-	struct timeval	startTime;
-	if (gettimeofday(&startTime, NULL) < 0)
-		return (3);
+	timeStart = ft_get_time_ms();
 	d = dequeSort(ac, av);
-	int timeToSortD = getTime(startTime);
+	long long timeToSortD = ft_get_time_ms() - timeStart;
 	if (timeToSortD < 0)
 		return (5);
 	std::cout << "After : ";
@@ -39,6 +34,6 @@ int	main(int ac, char **av)
 		std::cout << d[i] << " ";
 	}
 	std::cout << std::endl;
-	std::cout << "Time to sort using vector container : " << timeToSortV << std::endl;
-	std::cout << "Time to sort using deque container : " << timeToSortD << std::endl;
+	std::cout << "Time to sort using vector container (ms) : " << timeToSortV << std::endl;
+	std::cout << "Time to sort using deque container (ms) : " << timeToSortD << std::endl;
 }

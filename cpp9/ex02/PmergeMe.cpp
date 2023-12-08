@@ -61,15 +61,12 @@ std::vector< int >	createJacob(int n)
 	return (v);
 }
 
-int	getTime(struct timeval startTime)
+long long	ft_get_time_ms(void)
 {
-	int				time;
-	struct timeval	tv;
+	struct timeval	time;
 
-	if (gettimeofday(&tv, NULL) < 0)
-		return (-1);
-	time = (tv.tv_sec - startTime.tv_sec) * 1000 + (tv.tv_usec - startTime.tv_usec);
-	return (time);
+	gettimeofday(&time, NULL);
+	return (time.tv_sec * 1000 + time.tv_usec / 1000);
 }
 
 // *********************************************************************************** //

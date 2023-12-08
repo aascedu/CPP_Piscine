@@ -11,7 +11,7 @@
 # include <sys/time.h>
 
 void	verifyInput(char **av);
-int		getTime(struct timeval startTime);
+long long	ft_get_time_ms(void);
 
 std::vector< int >	createJacob(int n);
 
