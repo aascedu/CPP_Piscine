@@ -122,9 +122,7 @@ std::deque< int >	dequeInsert(std::deque< std::pair<int, int> > d)
 	}
 	for (size_t i = 0; i < jacob.size(); i++) {
 		it = d.begin();
-		for (int j = 0; j < jacob[i] - 1; j++) {
-			it++;
-		}
+		std::advance(it, jacob[i] - 1);
 		if (it->second != -1) {
 			int left = 0;
 			int right = jacob[i] + nbInserted;
@@ -138,9 +136,7 @@ std::deque< int >	dequeInsert(std::deque< std::pair<int, int> > d)
 			}
 			std::deque< int >::iterator pos = res.begin();
 			if (it->second > *pos) {
-				for (int i = 0; i <= middle ; i++) {
-					++pos;
-				}
+				std::advance(pos, middle + 1);
 			}
 			res.insert(pos, it->second);
 			nbInserted++;
@@ -219,9 +215,7 @@ std::vector< int >	vectorInsert(std::vector< std::pair<int, int> > d)
 	}
 	for (size_t i = 0; i < jacob.size(); i++) {
 		it = d.begin();
-		for (int j = 0; j < jacob[i] - 1; j++) {
-			it++;
-		}
+		std::advance(it, jacob[i] - 1);
 		if (it->second != -1) {
 			int left = 0;
 			int right = jacob[i] + nbInserted;
@@ -234,10 +228,8 @@ std::vector< int >	vectorInsert(std::vector< std::pair<int, int> > d)
 				middle = (right + left) / 2;
 			}
 			std::vector< int >::iterator pos = res.begin();
-			if (nbInserted != 0) {
-				for (int i = 0; i <= middle ; i++) {
-					++pos;
-				}
+			if (it->second > *pos) {
+				std::advance(pos, middle + 1);
 			}
 			res.insert(pos, it->second);
 			nbInserted++;

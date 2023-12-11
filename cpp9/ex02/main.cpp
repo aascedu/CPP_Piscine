@@ -18,22 +18,18 @@ int	main(int ac, char **av)
 		return (2);
 	}
 
-	long long timeStart = ft_get_time_ms();
+	clock_t	vStartTime = clock();
 	v = vectorSort(ac, av);
-	long long	timeToSortV = ft_get_time_ms() - timeStart;
-	if (timeToSortV < 0)
-		return (4);
+	clock_t	vEndTime = clock();
 
-	timeStart = ft_get_time_ms();
+	clock_t	dStartTime = clock();
 	d = dequeSort(ac, av);
-	long long timeToSortD = ft_get_time_ms() - timeStart;
-	if (timeToSortD < 0)
-		return (5);
+	clock_t	dEndTime = clock();
 	std::cout << "After : ";
 	for (size_t i = 0; i < d.size(); i++) {
 		std::cout << d[i] << " ";
 	}
 	std::cout << std::endl;
-	std::cout << "Time to sort using vector container (ms) : " << timeToSortV << std::endl;
-	std::cout << "Time to sort using deque container (ms) : " << timeToSortD << std::endl;
+	std::cout << "Time to sort using vector container : " << (vEndTime - vStartTime) / 1000 << " ms" << std::endl;
+	std::cout << "Time to sort using deque container : " << (dEndTime - dStartTime) / 1000 << " ms" << std::endl;
 }

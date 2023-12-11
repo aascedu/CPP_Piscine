@@ -9,6 +9,7 @@
 # include <vector>
 # include <algorithm>
 # include <sys/time.h>
+# include <ctime>
 
 void	verifyInput(char **av);
 long long	ft_get_time_ms(void);
