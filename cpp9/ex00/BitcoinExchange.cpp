@@ -10,9 +10,16 @@ void	fillMap(std::map<std::string, float> &m)
 		throw std::invalid_argument("database file couldn't be opened.");
 	}
 	std::string line;
-	std::getline(infile, line);
-	if (line != "date,exchange_rate") {
-		throw std::invalid_argument("wrong format inside database file.");
+	try
+	{
+		std::getline(infile, line);
+		if (line != "date,exchange_rate") {
+			throw std::invalid_argument("wrong format at begining of database file (\"date,exchange_rate\").");
+		}
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
 	}
 	while (std::getline(infile, line)) {
 		std::string date;
@@ -93,7 +100,7 @@ float	checkLine(std::string line)
 	float btc;
 	ss_btc >> btc;
 	if (!ss_btc.eof() || ss_btc.fail())
-		throw std::invalid_argument("day isn't an int or float.");
+		throw std::invalid_argument("value isn't an int or float.");
 	if (btc < 0 || btc > 1000)
 		throw std::invalid_argument("value must be between 0 and 1000.");
 	return (btc);
@@ -115,11 +122,17 @@ void	parsing(char *filename)
 		throw std::invalid_argument("input file couldn't be opened.");
 	}
 	std::string line;
-	std::getline(infile, line);
-	if (line != "date | value") {
-		throw std::invalid_argument("wrong format inside input file.");
+	try
+	{
+		std::getline(infile, line);
+		if (line != "date | value") {
+			throw std::invalid_argument("wrong format at begining of input file (\"date | value\").");
+		}
 	}
-	
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	while (std::getline(infile, line)) {
 		try
 		{
@@ -127,7 +140,8 @@ void	parsing(char *filename)
 				std::map<std::string, float>::iterator it;
 			std::string date = line.substr(0, 10);
 			it = m.upper_bound(date);
-			--it;
+			if ( it != m.begin() )
+				--it;
 			std::cout << date << " => " << value << " = " << value * it->second << std::endl;
 		}
 		catch(const std::exception& e)
