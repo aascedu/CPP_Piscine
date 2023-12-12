@@ -7,7 +7,7 @@ OBJS = $(SRCS:.cpp=.o)
 
 CPP = c++
 RM = @rm -rf
-CPPFLAGS = -Wall -Werror -Wextra -I. -g3 -std=c++98
+CPPFLAGS = -Wall -Werror -Wextra -I. -fsanitize=address -g3 -std=c++98
 
 NAME = RPN
 

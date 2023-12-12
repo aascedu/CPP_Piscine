@@ -36,7 +36,7 @@ void	parsing(char *input)
 		else if (inputStr[i] == '+' || inputStr[i] == '-' || inputStr[i] == '*' || inputStr[i] == '/')
 			nbSign++;
 	}
-	if (nbNbr != nbSign + 1 || nbSign == 0)
+	if (nbNbr != nbSign + 1)
 		throw std::invalid_argument("number of numbers and number of signs doesn't match");
 }
 
@@ -50,25 +50,26 @@ void	fillStack(char *input)
 		if (isdigit(str[i]))
 			s.push(str[i] - 48);
 		if (str[i] == '+' || str[i] == '-' || str[i] == '*' || str[i] == '/') {
-			if (s.size() >= 2) {
+			if (s.size() >= 2)
+			{
 				int	nb2 = s.top();
 				s.pop();
 				int nb1 = s.top();
 				s.pop();
-				int result;
 				if (str[i] == '+')
-					result = nb1 + nb2;
+					s.push(nb1 + nb2);
 				else if (str[i] == '-')
-					result = nb1 - nb2;
+					s.push(nb1 - nb2);
 				else if (str[i] == '*')
-					result = nb1 * nb2;
+					s.push(nb1 * nb2);
 				else if (str[i] == '/') {
 					if (nb2 == 0)
 						throw std::invalid_argument("dividing by 0... don't do that");
-					result = nb1 / nb2;
+					s.push(nb1 / nb2);
 				}
-				s.push(result);
 			}
+			else
+				throw std::invalid_argument("stack size < 2");
 		}
 	}
 	std::cout << s.top() << std::endl;
